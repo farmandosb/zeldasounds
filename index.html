@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Zelda's sounds board</title>
+    <link rel="icon" 
+      type="image/png" 
+      href="./fs192.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="main">
+        <div id="back">
+            <h1>Botonera de Sonidos</h1>
+            <h2>Zelda Ocarina del Tiempo</h2>
+        </div>
+      
+    </div>
+   
+
+</body>
+<footer>
+    <span>created by  <strong>Freddy Suárez </strong> for fun of  <strong>Fabrizio</strong>.</span>
+    <span>"Nintendo" is a registered trademark of Nintendo of America Inc. Nintendo owns extensive intellectual property rights in all of its products, including video game systems, game titles, characters, game software, graphics, artwork, and screen shots. <a href="https://www.nintendo.com/corp/faq.jsp#graphics">Nintendo-Legal</a></span>
+    <span>All sounds were taken from <a href="http://noproblo.dayjo.org/ZeldaSounds/">noproblo.dayjo.org</a></span>
+    <span>Button styles modified from <a href="https://codepen.io/joshbader/pen/mjZzGM">Josh Bader</a></span>
+</footer>
+
+
+
+<script language="javascript" type="text/javascript">
+    let body = document.querySelector("body");
+    let primero = true;
+    let segundo = true;
+    for (i = 0; i < 400; i++) {
+        if ((i == 0) || (i % 6 == 0)) {
+            var joy = document.createElement("div");
+            joy.className = "joy-con";
+            joy.classList.add("right");
+            var botonera = document.createElement("div");
+            botonera.className = "button-group";
+            joy.appendChild(botonera);
+            //console.log("botonera created");
+
+            
+        }
+        let button = document.createElement("div");
+        button.id = i+1;
+        let audio = document.createElement("audio");
+        //console.log("audio created");
+        audio.id = "audio"+(i+1);
+        audio.src = "./sounds/sound" + i + ".wav";
+        button.classList.add("button");
+        button.classList.add("letter");
+        if (primero) {
+            if (segundo) {
+                button.dataset.letter = "A";
+                //console.log("primero true segundo true")
+            } else {
+                button.dataset.letter = "A";
+                //console.log("primero true segundo false")
+            }
+
+        } else {
+            if (segundo) {
+                button.dataset.letter = "B";
+
+                //console.log("primero false segundo true")
+            } else {
+                button.dataset.letter = "B";
+
+                //console.log("primero false segundo false")
+            }
+            segundo = !segundo;
+
+        }
+        primero = !primero;
+        
+        button.addEventListener("click", (e) => {
+            //console.log(e.target);
+            play(e);
+        });
+        button.appendChild(audio);
+        botonera.appendChild(button);
+
+        main.appendChild(joy);
+    }
+    function play(e){
+        let a = document.querySelector("#audio"+e.target.id);
+        a.play();
+    }
+
+</script>
+
+</html>
