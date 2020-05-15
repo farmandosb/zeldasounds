@@ -1,7 +1,7 @@
 body{
     margin:0;
     padding: 0;
-    background-color: #AAA;
+
     
 }
     #main{
@@ -17,7 +17,7 @@ body{
         background-image: url("./images/linktemplo.jpg");
         width: 100%;
         text-align: center;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        
         color: #EEE;
         background-size: cover;
         background-position: center;
@@ -41,14 +41,42 @@ body{
         font-size: small;
         letter-spacing: 2em;
     }
-    h1{
-        font-size: large;
-        text-shadow: #555 1px 1px 1px;
-    }
-    h2{
-        font-size: medium;
-        text-shadow: #555 1px 1px 1px;
-    }
+    h1,
+        h2 {
+            font-size: medium;
+            margin: 0.3rem;
+            font-weight: 500;
+        }
+        h1{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.5rem;
+        }
+
+    
+
+        .header {
+            
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            left: 0;
+            top: 0;
+            width: 100%;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            
+
+
+
+
+        }
+        .header img{
+            height: 2em;
+      
+        }
+
+ 
     
 
 
@@ -62,6 +90,7 @@ body{
         padding-top: 20px;
         padding-right: 5px;
         margin-left:-15px;
+        margin-bottom: 20px;    
     }
     
     
@@ -198,8 +227,7 @@ body{
         align-items: center;
         background-color: #777777;
         color: #AAAAAA;
-
-       
+        padding-top: 10px;
         left: 0;
         bottom: 0;
         width: 100%;
@@ -208,9 +236,10 @@ body{
     }
 
     footer span{
-        font-size: x-small;
+        font-size: small;
         padding: 5px;
         text-align: center;
+        max-width: 500px;
     }
     footer a{
         text-decoration: none;
@@ -220,6 +249,6 @@ body{
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         text-transform: uppercase;
         font-weight: 200;
-        font-size: smaller;
+        font-size: x-small;
         color: #CCC;
     }
